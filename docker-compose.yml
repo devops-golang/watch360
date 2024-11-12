@@ -9,6 +9,7 @@ services:
     ports:
       - 8080:8080
     command: --interval 10 --http-api-metrics --http-api-token demotoken --debug prometheus grafana parent child
+
   prometheus:
     container_name: prometheus
     image: prom/prometheus
@@ -17,6 +18,7 @@ services:
       - prometheus:/prometheus/
     ports:
       - 9090:9090
+
   grafana:
     container_name: grafana
     image: grafana/grafana
@@ -27,6 +29,7 @@ services:
     volumes:
       - grafana:/var/lib/grafana
       - ./grafana:/etc/grafana/provisioning
+
   parent:
     image: nginx
     container_name: parent

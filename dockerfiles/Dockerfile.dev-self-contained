@@ -40,7 +40,7 @@ LABEL "com.centurylinklabs.watchtower"="true"
 # copy files from other container
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
-COPY --from=builder /watchtower/watchtower /watchtower
+COPY --from=builder /watchtower /watchtower
 
 HEALTHCHECK CMD [ "/watch360", "--health-check"]
 
